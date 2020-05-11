@@ -10,11 +10,6 @@ import Foundation
 import Alamofire
 import RxSwift
 
-public enum APIError: Error {
-    case decodingFailure
-    case noResponse
-}
-
 protocol Client {
     func request<Response>(_ endpoint: Endpoint<Response>) -> Single<Response>
 }

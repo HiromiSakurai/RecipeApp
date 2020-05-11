@@ -31,6 +31,7 @@
 		5D3A77C12469E7090058E248 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B02469D4390058E248 /* RxSwift.framework */; };
 		5D3A77C22469E7110058E248 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B22469D4720058E248 /* Alamofire.framework */; };
 		5D3A77C52469EA9F0058E248 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C42469EA9F0058E248 /* API.swift */; };
+		5D3A77C72469EE430058E248 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C62469EE430058E248 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		5D3A77BA2469D9800058E248 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		5D3A77BD2469DA870058E248 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5D3A77C42469EA9F0058E248 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5D3A77C62469EE430058E248 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				5D3A77B42469D4CF0058E248 /* Endpoint.swift */,
 				5D3A77BD2469DA870058E248 /* Client.swift */,
 				5D3A77C42469EA9F0058E248 /* API.swift */,
+				5D3A77C62469EE430058E248 /* APIError.swift */,
 			);
 			path = RecipeAppKit;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				5D3A77BE2469DA870058E248 /* Client.swift in Sources */,
 				5D3A77C52469EA9F0058E248 /* API.swift in Sources */,
 				5D3A77B92469D9670058E248 /* VideosSample.swift in Sources */,
+				5D3A77C72469EE430058E248 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
