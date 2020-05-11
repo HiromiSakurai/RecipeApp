@@ -25,6 +25,12 @@
 		5D3A77B72469D6BC0058E248 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77B62469D6BC0058E248 /* Recipe.swift */; };
 		5D3A77B92469D9670058E248 /* VideosSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77B82469D9670058E248 /* VideosSample.swift */; };
 		5D3A77BB2469D9800058E248 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77BA2469D9800058E248 /* Attributes.swift */; };
+		5D3A77BE2469DA870058E248 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77BD2469DA870058E248 /* Client.swift */; };
+		5D3A77BF2469E4C50058E248 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B02469D4390058E248 /* RxSwift.framework */; };
+		5D3A77C02469E4CA0058E248 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B22469D4720058E248 /* Alamofire.framework */; };
+		5D3A77C12469E7090058E248 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B02469D4390058E248 /* RxSwift.framework */; };
+		5D3A77C22469E7110058E248 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B22469D4720058E248 /* Alamofire.framework */; };
+		5D3A77C52469EA9F0058E248 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C42469EA9F0058E248 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +47,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5D3A778E2469C23F0058E248;
 			remoteInfo = RecipeAppKit;
-		};
-		5D3A779B2469C23F0058E248 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D3A775D2469B4380058E248 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D3A77642469B4380058E248;
-			remoteInfo = RecipeApp;
 		};
 		5D3A77A22469C23F0058E248 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -104,6 +103,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3A77A42469C23F0058E248 /* RecipeAppKit.framework in Frameworks */,
+				5D3A77C12469E7090058E248 /* RxSwift.framework in Frameworks */,
+				5D3A77C22469E7110058E248 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3A77982469C23F0058E248 /* RecipeAppKit.framework in Frameworks */,
+				5D3A77BF2469E4C50058E248 /* RxSwift.framework in Frameworks */,
+				5D3A77C02469E4CA0058E248 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +190,8 @@
 				5D3A77912469C23F0058E248 /* RecipeAppKit.h */,
 				5D3A77922469C23F0058E248 /* Info.plist */,
 				5D3A77B42469D4CF0058E248 /* Endpoint.swift */,
+				5D3A77BD2469DA870058E248 /* Client.swift */,
+				5D3A77C42469EA9F0058E248 /* API.swift */,
 			);
 			path = RecipeAppKit;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				5D3A77622469B4380058E248 /* Frameworks */,
 				5D3A77632469B4380058E248 /* Resources */,
 				5D3A77A92469C23F0058E248 /* Embed Frameworks */,
+				5D3A77C32469E8000058E248 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,7 +306,6 @@
 			);
 			dependencies = (
 				5D3A779A2469C23F0058E248 /* PBXTargetDependency */,
-				5D3A779C2469C23F0058E248 /* PBXTargetDependency */,
 			);
 			name = RecipeAppKitTests;
 			productName = RecipeAppKitTests;
@@ -389,6 +394,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D3A77C32469E8000058E248 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D3A77612469B4380058E248 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -439,11 +466,6 @@
 			isa = PBXTargetDependency;
 			target = 5D3A778E2469C23F0058E248 /* RecipeAppKit */;
 			targetProxy = 5D3A77992469C23F0058E248 /* PBXContainerItemProxy */;
-		};
-		5D3A779C2469C23F0058E248 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D3A77642469B4380058E248 /* RecipeApp */;
-			targetProxy = 5D3A779B2469C23F0058E248 /* PBXContainerItemProxy */;
 		};
 		5D3A77A32469C23F0058E248 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -593,6 +615,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -612,6 +638,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -741,6 +771,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipeAppKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,6 +795,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipeAppKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
