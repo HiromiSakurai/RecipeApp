@@ -22,6 +22,9 @@
 		5D3A77B12469D4390058E248 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B02469D4390058E248 /* RxSwift.framework */; };
 		5D3A77B32469D4720058E248 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B22469D4720058E248 /* Alamofire.framework */; };
 		5D3A77B52469D4CF0058E248 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77B42469D4CF0058E248 /* Endpoint.swift */; };
+		5D3A77B72469D6BC0058E248 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77B62469D6BC0058E248 /* Recipe.swift */; };
+		5D3A77B92469D9670058E248 /* VideosSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77B82469D9670058E248 /* VideosSample.swift */; };
+		5D3A77BB2469D9800058E248 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77BA2469D9800058E248 /* Attributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		5D3A77B02469D4390058E248 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5D3A77B22469D4720058E248 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5D3A77B42469D4CF0058E248 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5D3A77B62469D6BC0058E248 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		5D3A77B82469D9670058E248 /* VideosSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosSample.swift; sourceTree = "<group>"; };
+		5D3A77BA2469D9800058E248 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,7 @@
 		5D3A77902469C23F0058E248 /* RecipeAppKit */ = {
 			isa = PBXGroup;
 			children = (
+				5D3A77BC2469D9AC0058E248 /* Entity */,
 				5D3A77912469C23F0058E248 /* RecipeAppKit.h */,
 				5D3A77922469C23F0058E248 /* Info.plist */,
 				5D3A77B42469D4CF0058E248 /* Endpoint.swift */,
@@ -200,6 +207,16 @@
 				5D3A77B02469D4390058E248 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D3A77BC2469D9AC0058E248 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5D3A77B82469D9670058E248 /* VideosSample.swift */,
+				5D3A77B62469D6BC0058E248 /* Recipe.swift */,
+				5D3A77BA2469D9800058E248 /* Attributes.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +413,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3A77B52469D4CF0058E248 /* Endpoint.swift in Sources */,
+				5D3A77B72469D6BC0058E248 /* Recipe.swift in Sources */,
+				5D3A77BB2469D9800058E248 /* Attributes.swift in Sources */,
+				5D3A77B92469D9670058E248 /* VideosSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
