@@ -31,6 +31,8 @@
 		5D3A77C52469EA9F0058E248 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C42469EA9F0058E248 /* API.swift */; };
 		5D3A77C72469EE430058E248 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C62469EE430058E248 /* APIError.swift */; };
 		5D3A77C9246B35CE0058E248 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C8246B35CE0058E248 /* RecipeListViewController.swift */; };
+		5D3A77CB246B38010058E248 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77CA246B38010058E248 /* SnapKit.framework */; };
+		5D3A77CC246B38010058E248 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77CA246B38010058E248 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5D3A77A52469C23F0058E248 /* RecipeAppKit.framework in Embed Frameworks */,
+				5D3A77CC246B38010058E248 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +100,7 @@
 		5D3A77C42469EA9F0058E248 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5D3A77C62469EE430058E248 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5D3A77C8246B35CE0058E248 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		5D3A77CA246B38010058E248 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				5D3A77A42469C23F0058E248 /* RecipeAppKit.framework in Frameworks */,
 				5D3A77C12469E7090058E248 /* RxSwift.framework in Frameworks */,
 				5D3A77C22469E7110058E248 /* Alamofire.framework in Frameworks */,
+				5D3A77CB246B38010058E248 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 		5D3A77AF2469D4380058E248 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D3A77CA246B38010058E248 /* SnapKit.framework */,
 				5D3A77B22469D4720058E248 /* Alamofire.framework */,
 				5D3A77B02469D4390058E248 /* RxSwift.framework */,
 			);
