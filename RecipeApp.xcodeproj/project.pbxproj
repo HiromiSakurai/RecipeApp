@@ -33,6 +33,7 @@
 		5D3A77C9246B35CE0058E248 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77C8246B35CE0058E248 /* RecipeListViewController.swift */; };
 		5D3A77CB246B38010058E248 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77CA246B38010058E248 /* SnapKit.framework */; };
 		5D3A77CC246B38010058E248 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77CA246B38010058E248 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D3A77D0246F0CD90058E248 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77CF246F0CD90058E248 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		5D3A77C62469EE430058E248 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5D3A77C8246B35CE0058E248 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		5D3A77CA246B38010058E248 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		5D3A77CF246F0CD90058E248 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				5D3A77732469B4400058E248 /* LaunchScreen.storyboard */,
 				5D3A77762469B4400058E248 /* Info.plist */,
 				5D3A77C8246B35CE0058E248 /* RecipeListViewController.swift */,
+				5D3A77CF246F0CD90058E248 /* RecipeCell.swift */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */,
 				5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */,
 				5D3A77C9246B35CE0058E248 /* RecipeListViewController.swift in Sources */,
+				5D3A77D0246F0CD90058E248 /* RecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
