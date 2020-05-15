@@ -19,8 +19,8 @@ final class RecipeAppTabBarController: UITabBarController {
 
     private let favoreteListTabItem: UITabBarItem = {
         let item = UITabBarItem()
-        item.title = "レシピ"
-        item.image = UIImage(named: "home")
+        item.title = "お気に入り"
+        item.image = UIImage(named: "favorite")
         return item
     }()
 
