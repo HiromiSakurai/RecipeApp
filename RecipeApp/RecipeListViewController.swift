@@ -11,7 +11,9 @@ import SnapKit
 
 class RecipeListViewController: UIViewController {
     let recipeListCollectionView: UICollectionView = {
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: RecipeListFlowLayout())
+        let inset = RecipeListFlowLayout.LayoutConst.contentInset
+        let sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: 0, right: inset)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: RecipeListFlowLayout(sectionInset: sectionInset))
         cv.backgroundColor = .white
         cv.register(RecipeCell.self, forCellWithReuseIdentifier: "cell")
         return cv

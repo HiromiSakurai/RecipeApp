@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 final class RecipeListFlowLayout: UICollectionViewFlowLayout {
-    override init() {
+
+    init(sectionInset: UIEdgeInsets) {
         super.init()
+        self.sectionInset = sectionInset
         self.minimumInteritemSpacing = 12
         self.minimumLineSpacing = 24
         self.scrollDirection = .vertical
-        let contentInset = LayoutConst.contentInset
-        self.sectionInset = .init(top: contentInset, left: contentInset, bottom: 0, right: contentInset)
         self.sectionInsetReference = .fromSafeArea
     }
 
