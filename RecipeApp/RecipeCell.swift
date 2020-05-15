@@ -58,7 +58,7 @@ extension RecipeCell {
     enum LayoutConst {
         static let titleMarginTop: CGFloat = 8.0
         static let titleMarginSide: CGFloat = 4.0
-        static let titleLineSpacing: CGFloat = 3.0
+        static let titleLineSpacing: CGFloat = 1.0
 
         static let titleFontSize: CGFloat = 14.0
     }
