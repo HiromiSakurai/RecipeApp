@@ -7,12 +7,42 @@
 //
 
 import UIKit
+import SnapKit
 
 class RecipeListViewController: UIViewController {
+    let recipeListCollectionView: UICollectionView = {
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: RecipeListFlowLayout())
+        cv.backgroundColor = .white
+        cv.register(RecipeCell.self, forCellWithReuseIdentifier: "cell")
+        return cv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpViews()
+    }
+
+    private func setUpViews() {
+        navigationItem.title = "料理一覧"
+
+        recipeListCollectionView.dataSource = self
+
+        view.addSubview(recipeListCollectionView)
+        recipeListCollectionView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension RecipeListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        30
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RecipeCell
     }
 }
