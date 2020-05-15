@@ -18,7 +18,7 @@ protocol RecipeCellHeightCalculatable {
 extension RecipeCellHeightCalculatable where Self: UICollectionViewFlowLayout {
     func getRecipeCellHeight() -> CGFloat {
         let string = NSAttributedString(
-            // タイトルは2行固定のため、仮の文字列で計算
+            // タイトルは2行固定のため、仮の2行文字列で計算
             string: "a\n", font: UIFont.systemFont(ofSize: RecipeCell.LayoutConst.titleFontSize),
             lineSpacing: RecipeCell.LayoutConst.titleLineSpacing,
             alignment: .left
