@@ -36,6 +36,7 @@
 		5D3A77D0246F0CD90058E248 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77CF246F0CD90058E248 /* RecipeCell.swift */; };
 		5D3A77D2246F0F200058E248 /* RecipeCellHeightCalculatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77D1246F0F1F0058E248 /* RecipeCellHeightCalculatable.swift */; };
 		5D3A77D4246F10000058E248 /* NSAttributedString+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77D3246F10000058E248 /* NSAttributedString+extension.swift */; };
+		5D3A77D6246F106A0058E248 /* RecipeListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77D5246F106A0058E248 /* RecipeListFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		5D3A77CF246F0CD90058E248 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		5D3A77D1246F0F1F0058E248 /* RecipeCellHeightCalculatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellHeightCalculatable.swift; sourceTree = "<group>"; };
 		5D3A77D3246F10000058E248 /* NSAttributedString+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+extension.swift"; sourceTree = "<group>"; };
+		5D3A77D5246F106A0058E248 /* RecipeListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				5D3A77CF246F0CD90058E248 /* RecipeCell.swift */,
 				5D3A77D1246F0F1F0058E248 /* RecipeCellHeightCalculatable.swift */,
 				5D3A77D3246F10000058E248 /* NSAttributedString+extension.swift */,
+				5D3A77D5246F106A0058E248 /* RecipeListFlowLayout.swift */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				5D3A77C9246B35CE0058E248 /* RecipeListViewController.swift in Sources */,
 				5D3A77D4246F10000058E248 /* NSAttributedString+extension.swift in Sources */,
 				5D3A77D0246F0CD90058E248 /* RecipeCell.swift in Sources */,
+				5D3A77D6246F106A0058E248 /* RecipeListFlowLayout.swift in Sources */,
 				5D3A77D2246F0F200058E248 /* RecipeCellHeightCalculatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
