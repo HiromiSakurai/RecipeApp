@@ -9,8 +9,8 @@
 import UIKit
 import SnapKit
 
-class FavoriteListViewController: UIViewController {
-    let favoriteCountLabel: UILabel = {
+final class FavoriteListViewController: UIViewController {
+    private let favoriteCountLabel: UILabel = {
         let label = UILabel()
         label.text = "お気に入り件数: 5"
         label.textColor = .darkGray
@@ -19,7 +19,7 @@ class FavoriteListViewController: UIViewController {
         return label
     }()
 
-    let favoriteListCollectionView: UICollectionView = {
+    private let favoriteListCollectionView: UICollectionView = {
         let inset = RecipeListFlowLayout.LayoutConst.contentInset
         let sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: RecipeListFlowLayout(sectionInset: sectionInset))

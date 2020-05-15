@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import SnapKit
 
-class RecipeCell: UICollectionViewCell {
-    let imageView: UIImageView = {
+final class RecipeCell: UICollectionViewCell {
+    private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage.init(named: "hot_dog")
         iv.contentMode = .scaleAspectFill
@@ -19,7 +19,7 @@ class RecipeCell: UICollectionViewCell {
         return iv
     }()
 
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.attributedText = .init(
             string: "キャベツとにんじんのマヨマスタードサラダ",

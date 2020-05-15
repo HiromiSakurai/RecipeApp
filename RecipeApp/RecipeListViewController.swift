@@ -9,8 +9,8 @@
 import UIKit
 import SnapKit
 
-class RecipeListViewController: UIViewController {
-    let recipeListCollectionView: UICollectionView = {
+final class RecipeListViewController: UIViewController {
+    private let recipeListCollectionView: UICollectionView = {
         let inset = RecipeListFlowLayout.LayoutConst.contentInset
         let sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: 0, right: inset)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: RecipeListFlowLayout(sectionInset: sectionInset))
