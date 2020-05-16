@@ -24,7 +24,7 @@ final class FavoriteModelImpl: FavoriteModel {
     init() {
         self.disk = Disk.shared
 
-        let favoriteList: [Recipe] = Disk.shared.getObject(filename: .favoriteList) ?? []
+        let favoriteList: [Recipe] = disk.getObject(filename: .favoriteList) ?? []
         self.memoryCache = Set(favoriteList)
         self.favoriteListRelay = .init(value: favoriteList)
     }
