@@ -19,3 +19,19 @@ public struct Recipe: Codable {
         case attributes
     }
 }
+
+// MARK: - Hashable
+
+extension Recipe: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ID)
+    }
+}
+
+// MARK: - Equatable
+
+extension Recipe: Equatable {
+    public static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        lhs.ID == rhs.ID
+    }
+}
