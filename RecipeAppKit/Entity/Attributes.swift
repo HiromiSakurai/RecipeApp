@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Attributes: Codable, Equatable, Hashable {
+public struct Attributes: Codable {
     public let title: String
     public let thumbnailSquareURL: URL
 

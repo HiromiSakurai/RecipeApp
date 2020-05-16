@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Recipe: Codable, Equatable, Hashable {
+public struct Recipe: Codable {
     public let ID: String
     public let type: String
     public let attributes: Attributes
@@ -17,5 +17,21 @@ public struct Recipe: Codable, Equatable, Hashable {
         case ID = "id"
         case type
         case attributes
+    }
+}
+
+// MARK: - Hashable
+
+extension Recipe: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ID)
+    }
+}
+
+// MARK: - Equatable
+
+extension Recipe: Equatable {
+    public static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        lhs.ID == rhs.ID
     }
 }
