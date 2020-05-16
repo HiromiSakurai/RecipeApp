@@ -14,6 +14,7 @@ public protocol FavoriteModel {
     func getFavoriteList() -> Observable<[Recipe]>
     func addFavorite(recipe: Recipe)
     func deleteFavorite(recipe: Recipe)
+    func isFavorite(recipe: Recipe) -> Bool
 }
 
 final class FavoriteModelImpl: FavoriteModel {
@@ -34,7 +35,7 @@ final class FavoriteModelImpl: FavoriteModel {
     }
 
     func addFavorite(recipe: Recipe) {
-        if memoryCache.contains(recipe) {
+        if isFavorite(recipe: recipe) {
             return
         }
         memoryCache.insert(recipe)
@@ -47,7 +48,7 @@ final class FavoriteModelImpl: FavoriteModel {
     }
 
     func deleteFavorite(recipe: Recipe) {
-        guard memoryCache.contains(recipe) else {
+        guard isFavorite(recipe: recipe) else {
             return
         }
         memoryCache.remove(recipe)
@@ -57,5 +58,9 @@ final class FavoriteModelImpl: FavoriteModel {
         favoriteListRelay.mutableValue = list
 
         disk.writeObject(filename: .favoriteList, jsonEncodable: list)
+    }
+
+    func isFavorite(recipe: Recipe) -> Bool {
+        memoryCache.contains(recipe)
     }
 }
