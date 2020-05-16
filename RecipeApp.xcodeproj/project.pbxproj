@@ -10,6 +10,8 @@
 		4B859445247020FE00BFA073 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B859444247020FE00BFA073 /* Disk.swift */; };
 		4B859446247022A400BFA073 /* RecipeAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A778F2469C23F0058E248 /* RecipeAppKit.framework */; };
 		4B85944A247049EF00BFA073 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B859449247049EF00BFA073 /* FavoriteModel.swift */; };
+		4B85944C2470608C00BFA073 /* Rx+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85944B2470608C00BFA073 /* Rx+extension.swift */; };
+		4B85944E247060BC00BFA073 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85944D247060BC00BFA073 /* Array+extension.swift */; };
 		5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77682469B4380058E248 /* AppDelegate.swift */; };
 		5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A776A2469B4380058E248 /* SceneDelegate.swift */; };
 		5D3A77722469B4400058E248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A77712469B4400058E248 /* Assets.xcassets */; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		4B859444247020FE00BFA073 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		4B859449247049EF00BFA073 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		4B85944B2470608C00BFA073 /* Rx+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extension.swift"; sourceTree = "<group>"; };
+		4B85944D247060BC00BFA073 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		5D3A77652469B4380058E248 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A77682469B4380058E248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A776A2469B4380058E248 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +173,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B85944F247060E700BFA073 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4B85944B2470608C00BFA073 /* Rx+extension.swift */,
+				4B85944D247060BC00BFA073 /* Array+extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5D3A775C2469B4380058E248 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +236,7 @@
 		5D3A77902469C23F0058E248 /* RecipeAppKit */ = {
 			isa = PBXGroup;
 			children = (
+				4B85944F247060E700BFA073 /* Extension */,
 				5D3A77BC2469D9AC0058E248 /* Entity */,
 				5D3A77912469C23F0058E248 /* RecipeAppKit.h */,
 				5D3A77922469C23F0058E248 /* Info.plist */,
@@ -495,6 +509,8 @@
 				4B85944A247049EF00BFA073 /* FavoriteModel.swift in Sources */,
 				5D3A77B92469D9670058E248 /* VideosSample.swift in Sources */,
 				5D3A77C72469EE430058E248 /* APIError.swift in Sources */,
+				4B85944C2470608C00BFA073 /* Rx+extension.swift in Sources */,
+				4B85944E247060BC00BFA073 /* Array+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

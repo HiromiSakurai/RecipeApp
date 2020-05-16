@@ -59,23 +59,3 @@ final class FavoriteModelImpl: FavoriteModel {
         disk.writeObject(filename: .favoriteList, jsonEncodable: list)
     }
 }
-
-/// valueがread-onlyのため、writeを簡略化するためのutility
-extension BehaviorRelay where Element: Any {
-    var mutableValue: Element {
-        set {
-            self.accept(newValue)
-        }
-        get {
-            return self.value
-        }
-    }
-}
-
-extension Array where Element: Equatable {
-    mutating func remove(object: Element) {
-        if let index = firstIndex(of: object) {
-            remove(at: index)
-        }
-    }
-}
