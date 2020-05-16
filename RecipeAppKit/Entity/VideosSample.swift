@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct VideosSample: Decodable {
+public struct VideosSample: Codable {
     public let data: [Recipe]
 
     private enum CodingKeys : String, CodingKey {
