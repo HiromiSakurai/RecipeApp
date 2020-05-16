@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum FileName: String, CaseIterable {
+enum FileName: String, CaseIterable {
     case favoriteList = "favorite_list.json"
 }
 
-final public class Disk {
+final class Disk {
     private enum PathSearchError: Error {
         case pathNotFound
     }
@@ -21,12 +21,12 @@ final public class Disk {
         case disk
     }
 
-    public static let shared: Disk = Disk()
+    static let shared: Disk = Disk()
     private let dispatchQueue: DispatchQueue = DispatchQueue(label: DispatchQueueLabel.disk.rawValue)
 
     private init() {}
 
-    public func getObject<T: Decodable>(filename: FileName) -> T? {
+    func getObject<T: Decodable>(filename: FileName) -> T? {
         do {
             let fileURL = try retrieveConfiguredFileURL(filename: filename)
             let localData = try Data(contentsOf: fileURL, options: .alwaysMapped)
@@ -38,7 +38,7 @@ final public class Disk {
         }
     }
 
-    public func writeObject<T: Encodable>(filename: FileName, jsonEncodable: T) {
+    func writeObject<T: Encodable>(filename: FileName, jsonEncodable: T) {
         dispatchQueue.async { [weak self] in
             guard let self = self else { return }
 
