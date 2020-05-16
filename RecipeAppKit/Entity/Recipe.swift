@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Recipe: Codable {
+public struct Recipe: Codable, Equatable, Hashable {
     public let ID: String
     public let type: String
     public let attributes: Attributes
