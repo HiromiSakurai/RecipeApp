@@ -11,6 +11,14 @@ import UIKit
 
 final class RecipeListFlowLayout: UICollectionViewFlowLayout {
 
+    private var cellWidth: CGFloat {
+        guard let collectionView = collectionView else {
+            return 180
+        }
+
+        return ((collectionView.bounds.width - LayoutConst.contentInset * 3) / 2).rounded(.down)
+    }
+
     init(sectionInset: UIEdgeInsets) {
         super.init()
         self.sectionInset = sectionInset
@@ -42,12 +50,8 @@ extension RecipeListFlowLayout {
 // MARK: - RecipeCellHeightCalculatable
 
 extension RecipeListFlowLayout: RecipeCellHeightCalculatable {
-    var cellWidth: CGFloat {
-        guard let collectionView = collectionView else {
-            return 180
-        }
-
-        return ((collectionView.bounds.width - LayoutConst.contentInset * 3) / 2).rounded(.down)
+    var thumbnailHeight: CGFloat {
+        cellWidth
     }
 }
 
