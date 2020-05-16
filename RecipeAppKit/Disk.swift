@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FileName: String, CaseIterable {
+enum FileName: String {
     case favoriteList = "favorite_list.json"
 }
 
