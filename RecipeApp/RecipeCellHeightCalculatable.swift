@@ -11,11 +11,16 @@ import UIKit
 
 protocol RecipeCellHeightCalculatable {
     var cellWidth: CGFloat { get }
+    var thumbnailHeight: CGFloat { get }
 
     func getRecipeCellHeight() -> CGFloat
 }
 
 extension RecipeCellHeightCalculatable where Self: UICollectionViewFlowLayout {
+    var thumbnailHeight: CGFloat {
+        return cellWidth
+    }
+
     func getRecipeCellHeight() -> CGFloat {
         let string = NSAttributedString(
             // タイトルは2行固定のため、仮の2行文字列で計算
@@ -23,7 +28,7 @@ extension RecipeCellHeightCalculatable where Self: UICollectionViewFlowLayout {
             lineSpacing: RecipeCell.LayoutConst.titleLineSpacing,
             alignment: .left
         )
-        return cellWidth + RecipeCell.LayoutConst.titleMarginTop + string.getBounds(width: .greatestFiniteMagnitude).height
+        return thumbnailHeight + RecipeCell.LayoutConst.titleMarginTop + string.getBounds(width: .greatestFiniteMagnitude).height
     }
 }
 
