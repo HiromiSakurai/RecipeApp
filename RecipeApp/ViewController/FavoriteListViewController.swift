@@ -8,11 +8,16 @@
 
 import UIKit
 import SnapKit
+import RecipeAppKit
+import RxSwift
+import RxDataSources
 
 final class FavoriteListViewController: UIViewController {
+    private let viewModel: FavoriteListViewModel
+    private let disposeBag = DisposeBag()
+
     private let favoriteCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "お気に入り件数: 5"
         label.textColor = .darkGray
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 14)
@@ -20,7 +25,7 @@ final class FavoriteListViewController: UIViewController {
     }()
 
     private let favoriteListCollectionView: UICollectionView = {
-        let inset = RecipeListFlowLayout.LayoutConst.contentInset
+        let inset = FavoriteListFlowLayout.LayoutConst.contentInset
         let sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: RecipeListFlowLayout(sectionInset: sectionInset))
         cv.backgroundColor = .white
@@ -28,17 +33,46 @@ final class FavoriteListViewController: UIViewController {
         return cv
     }()
 
+    private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfFavoriteCellViewData>(
+        configureCell: { dataSource, collectionView, indexPath, item in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FavoriteCell else {
+                return UICollectionViewCell()
+            }
+
+            cell.set(title: item.title,
+                     thumbnailURL: item.thumbnailURL,
+                     isFavorite: false,
+                     favoriteButtonHandler: nil)
+            return cell
+    })
+
+    init(viewModel: FavoriteListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpViews()
+        setUpBindings()
+    }
+
+    private func setUpBindings() {
+        viewModel.getFavoriteCellViewData()
+            .drive(favoriteListCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+
+        viewModel.getFavoriteCount()
+            .drive(onNext: { [unowned self] count in
+                self.favoriteCountLabel.text = "お気に入り件数: \(count)"
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setUpViews() {
         view.backgroundColor = .white
         navigationItem.title = "お気に入り一覧"
-
-        favoriteListCollectionView.dataSource = self
 
         view.addSubview(favoriteCountLabel)
         view.addSubview(favoriteListCollectionView)
@@ -51,17 +85,16 @@ final class FavoriteListViewController: UIViewController {
             maker.left.right.bottom.equalToSuperview()
         }
     }
-}
 
-// MARK: - UICollectionViewDataSource
-
-extension FavoriteListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RecipeCell
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
+// MARK: - Initializable
+
+extension FavoriteListViewController: Initializable {
+    static func initialize(viewModel: FavoriteListViewModel) -> FavoriteListViewController {
+        .init(viewModel: viewModel)
+    }
+}

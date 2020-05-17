@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 typealias FavoriteButtonHandler = (() -> Void)
+typealias FavoriteCell = RecipeCell
 
 final class RecipeCell: UICollectionViewCell {
     private let disposeBag = DisposeBag()
@@ -69,6 +70,8 @@ final class RecipeCell: UICollectionViewCell {
         )
 
         self.isFavorite = isFavorite
+
+        favoriteButton.isHidden = favoriteButtonHandler == nil
         self.favoriteButtonHandler = favoriteButtonHandler
     }
 

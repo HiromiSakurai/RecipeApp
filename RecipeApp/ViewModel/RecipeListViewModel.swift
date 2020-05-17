@@ -27,7 +27,7 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
         self.recipeModel = recipeModel
         self.favoriteModel = favoriteModel
 
-        recipeModel.fetchRecipeList()
+        recipeModel.getRecipeList()
             .map { recipes -> [RecipeCellViewData] in
                 return recipes.map { [weak self] recipe -> RecipeCellViewData? in
                     guard let self = self else {
@@ -53,22 +53,22 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
     }
 
     func toggleFavorite(at indexPath: IndexPath) {
-        guard let recipes = recipeCellViewDataRelay.mutableValue.first?.items else {
+        guard var recipeCellViewData = recipeCellViewDataRelay.mutableValue.first?.items,
+            var target = recipeCellViewData[safe: indexPath.item],
+            let recipe = recipeModel.retrieveRecipe(using: indexPath.item) else {
             return
         }
 
-        let newRecipes = recipes.enumerated()
-            .map { (index, element) -> RecipeCellViewData in
-                if index == indexPath.item {
-                    var target = element
-                    target.isFavorite.toggle()
-                    return target
-                } else {
-                    return element
-                }
-            }
+        if target.isFavorite {
+            favoriteModel.deleteFavorite(recipe: recipe)
+        } else {
+            favoriteModel.addFavorite(recipe: recipe)
+        }
 
-        recipeCellViewDataRelay.mutableValue = [.init(header: "", items: newRecipes)]
+        target.isFavorite.toggle()
+        recipeCellViewData[indexPath.item] = target
+
+        recipeCellViewDataRelay.mutableValue = [.init(header: "", items: recipeCellViewData)]
     }
 
     private func checkIsFavorite(recipe: Recipe) -> Bool {
