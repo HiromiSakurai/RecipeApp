@@ -64,8 +64,8 @@ final class FavoriteListViewController: UIViewController {
             .disposed(by: disposeBag)
 
         viewModel.getFavoriteCount()
-            .drive(onNext: { [unowned self] count in
-                self.favoriteCountLabel.text = "お気に入り件数: \(count)"
+            .drive(onNext: { [weak self] count in
+                self?.favoriteCountLabel.text = "お気に入り件数: \(count)"
             })
             .disposed(by: disposeBag)
     }
