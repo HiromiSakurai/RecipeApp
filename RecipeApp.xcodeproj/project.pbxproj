@@ -20,6 +20,7 @@
 		4B8594592471520B00BFA073 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594572471520B00BFA073 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B85945B2471735800BFA073 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B85945A2471735800BFA073 /* RxDataSources.framework */; };
 		4B85945C2471735800BFA073 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B85945A2471735800BFA073 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B85945E247173E000BFA073 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85945D247173E000BFA073 /* Initializable.swift */; };
 		5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77682469B4380058E248 /* AppDelegate.swift */; };
 		5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A776A2469B4380058E248 /* SceneDelegate.swift */; };
 		5D3A77722469B4400058E248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A77712469B4400058E248 /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		4B8594542471520600BFA073 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		4B8594572471520B00BFA073 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		4B85945A2471735800BFA073 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		4B85945D247173E000BFA073 /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		5D3A77652469B4380058E248 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A77682469B4380058E248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A776A2469B4380058E248 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				5D3A77D7246F44090058E248 /* FavoriteListViewController.swift */,
 				5D3A77D9246F55320058E248 /* RecipeAppTabBarController.swift */,
 				4B8594522471351800BFA073 /* RecipeListViewModel.swift */,
+				4B85945D247173E000BFA073 /* Initializable.swift */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				5D3A77D6246F106A0058E248 /* RecipeListFlowLayout.swift in Sources */,
 				4B8594532471351800BFA073 /* RecipeListViewModel.swift in Sources */,
 				5D3A77D2246F0F200058E248 /* RecipeCellHeightCalculatable.swift in Sources */,
+				4B85945E247173E000BFA073 /* Initializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
