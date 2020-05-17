@@ -12,8 +12,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+typealias FavoriteButtonHandler = (() -> Void)
+
 final class RecipeCell: UICollectionViewCell {
-    private var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+    private var favoriteButtonHandler: FavoriteButtonHandler?
 
     private var isFavorite: Bool = false {
         didSet {
@@ -54,12 +57,10 @@ final class RecipeCell: UICollectionViewCell {
         setUpBindings()
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        //disposeBag = DisposeBag()
-    }
-
-    func set(title: String, thumbnailURL: URL, isFavorite: Bool) {
+    func set(title: String,
+             thumbnailURL: URL,
+             isFavorite: Bool,
+             favoriteButtonHandler: FavoriteButtonHandler?) {
         titleLabel.attributedText = .init(
             string: "\(title)",
             font: .systemFont(ofSize: LayoutConst.titleFontSize),
@@ -68,12 +69,13 @@ final class RecipeCell: UICollectionViewCell {
         )
 
         self.isFavorite = isFavorite
+        self.favoriteButtonHandler = favoriteButtonHandler
     }
 
     private func setUpBindings() {
         favoriteButton.rx.tap.asSignal()
             .emit(onNext: { [unowned self] _ in
-                self.isFavorite.toggle()
+                self.favoriteButtonHandler?()
             })
             .disposed(by: disposeBag)
     }

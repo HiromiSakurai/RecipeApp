@@ -25,12 +25,21 @@ final class RecipeListViewController: UIViewController {
         return cv
     }()
 
-    private let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfRecipeCellViewData>(
+    private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfRecipeCellViewData>(
         configureCell: { dataSource, collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? RecipeCell else {
                 return UICollectionViewCell()
             }
-            cell.set(title: item.title, thumbnailURL: item.thumbnailURL, isFavorite: item.isFavorite)
+
+            let favoriteButtonHandler = { [weak self] in
+                guard let self  = self else { return }
+                self.viewModel.toggleFavorite(at: indexPath)
+            }
+
+            cell.set(title: item.title,
+                     thumbnailURL: item.thumbnailURL,
+                     isFavorite: item.isFavorite,
+                     favoriteButtonHandler: favoriteButtonHandler)
             return cell
     })
 
