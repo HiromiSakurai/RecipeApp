@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+typealias FavoriteListFlowLayout = RecipeListFlowLayout
+
 final class RecipeListFlowLayout: UICollectionViewFlowLayout {
 
     private var cellWidth: CGFloat {

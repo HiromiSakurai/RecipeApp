@@ -1,5 +1,5 @@
 //
-//  Array+extension.swift
+//  Collection+extension.swift
 //  RecipeAppKit
 //
 //  Created by Hiromi Sakurai on 2020/05/17.
@@ -7,6 +7,12 @@
 //
 
 import Foundation
+
+public extension Collection {
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
 
 public extension Array where Element: Equatable {
     mutating func remove(object: Element) {

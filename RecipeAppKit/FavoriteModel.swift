@@ -17,12 +17,12 @@ public protocol FavoriteModel {
     func isFavorite(recipe: Recipe) -> Bool
 }
 
-final class FavoriteModelImpl: FavoriteModel {
+public final class FavoriteModelImpl: FavoriteModel {
     private let disk: Disk
     private let favoriteListRelay: BehaviorRelay<[Recipe]>
     private var memoryCache: Set<Recipe>
 
-    init() {
+    public init() {
         self.disk = Disk.shared
 
         let favoriteList: [Recipe] = disk.getObject(filename: .favoriteList) ?? []
@@ -30,11 +30,11 @@ final class FavoriteModelImpl: FavoriteModel {
         self.favoriteListRelay = .init(value: favoriteList)
     }
 
-    func getFavoriteList() -> Observable<[Recipe]> {
+    public func getFavoriteList() -> Observable<[Recipe]> {
         favoriteListRelay.asObservable()
     }
 
-    func addFavorite(recipe: Recipe) {
+    public func addFavorite(recipe: Recipe) {
         if isFavorite(recipe: recipe) {
             return
         }
@@ -47,7 +47,7 @@ final class FavoriteModelImpl: FavoriteModel {
         disk.writeObject(filename: .favoriteList, jsonEncodable: list)
     }
 
-    func deleteFavorite(recipe: Recipe) {
+    public func deleteFavorite(recipe: Recipe) {
         guard isFavorite(recipe: recipe) else {
             return
         }
@@ -60,7 +60,7 @@ final class FavoriteModelImpl: FavoriteModel {
         disk.writeObject(filename: .favoriteList, jsonEncodable: list)
     }
 
-    func isFavorite(recipe: Recipe) -> Bool {
+    public func isFavorite(recipe: Recipe) -> Bool {
         memoryCache.contains(recipe)
     }
 }

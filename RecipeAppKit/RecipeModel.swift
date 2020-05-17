@@ -8,21 +8,34 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 public protocol RecipeModel {
-    func fetchRecipeList() -> Single<[Recipe]>
+    func getRecipeList() -> Observable<[Recipe]>
+    func retrieveRecipe(using index: Int) -> Recipe?
 }
 
-final class RecipeModelImpl: RecipeModel {
+public final class RecipeModelImpl: RecipeModel {
     private let client: Client
+    private let recipeListRelay = BehaviorRelay<[Recipe]>(value: [])
+    private let disposeBag = DisposeBag()
 
-    init() {
+    public init() {
         self.client = ClientImpl()
-    }
 
-    func fetchRecipeList() -> Single<[Recipe]> {
         client
             .request(API.getVideosSample())
             .map(\.data)
+            .asObservable()
+            .bind(to: recipeListRelay)
+            .disposed(by: disposeBag)
+    }
+
+    public func getRecipeList() -> Observable<[Recipe]> {
+        recipeListRelay.asObservable()
+    }
+
+    public func retrieveRecipe(using index: Int) -> Recipe? {
+        recipeListRelay.mutableValue[safe: index] ?? nil
     }
 }
