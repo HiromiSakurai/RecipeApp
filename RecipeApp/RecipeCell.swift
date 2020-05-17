@@ -49,6 +49,10 @@ final class RecipeCell: UICollectionViewCell {
         }
     }
 
+    func set(title: String, thumbnailURL: URL, isFavorite: Bool) {
+        titleLabel.text = title
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
