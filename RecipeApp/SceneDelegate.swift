@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RecipeAppKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,8 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
 
-        let recipeListVC = RecipeListViewController()
-        let favoriteListVC = FavoriteListViewController()
+        let favoriteModel = FavoriteModelImpl()
+
+        let recipeListVM = RecipeListViewModelImpl(recipeModel: RecipeModelImpl(), favoriteModel: favoriteModel)
+        let recipeListVC = RecipeListViewController.initialize(viewModel: recipeListVM)
+
+        let favoriteListVM = FavoriteListViewModelImpl(favoriteModel: favoriteModel)
+        let favoriteListVC = FavoriteListViewController.initialize(viewModel: favoriteListVM)
+
         let tabBarController = RecipeAppTabBarController(recipeListVC: recipeListVC, favoriteListVC: favoriteListVC)
 
         window?.rootViewController = tabBarController
