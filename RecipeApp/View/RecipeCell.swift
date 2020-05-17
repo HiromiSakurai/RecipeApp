@@ -9,8 +9,21 @@
 import Foundation
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class RecipeCell: UICollectionViewCell {
+    private var disposeBag = DisposeBag()
+
+    private var isFavorite: Bool = false {
+        didSet {
+            let buttonImage = isFavorite ?
+                    UIImage(named: "favorite_filled") :
+                    UIImage(named: "favorite")
+            favoriteButton.setImage(buttonImage, for: .normal)
+        }
+    }
+
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage.init(named: "hot_dog")
@@ -19,14 +32,17 @@ final class RecipeCell: UICollectionViewCell {
         return iv
     }()
 
+    private let favoriteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage.init(named: "favorite"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        return button
+    }()
+
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = .init(
-            string: "キャベツとにんじんのマヨマスタードサラダ",
-            font: .systemFont(ofSize: LayoutConst.titleFontSize),
-            lineSpacing: LayoutConst.titleLineSpacing,
-            alignment: .left
-        )
         label.numberOfLines = 2
         return label
     }()
@@ -34,12 +50,48 @@ final class RecipeCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        setUpViews()
+        setUpBindings()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        //disposeBag = DisposeBag()
+    }
+
+    func set(title: String, thumbnailURL: URL, isFavorite: Bool) {
+        titleLabel.attributedText = .init(
+            string: "\(title)",
+            font: .systemFont(ofSize: LayoutConst.titleFontSize),
+            lineSpacing: LayoutConst.titleLineSpacing,
+            alignment: .left
+        )
+
+        self.isFavorite = isFavorite
+    }
+
+    private func setUpBindings() {
+        favoriteButton.rx.tap.asSignal()
+            .emit(onNext: { [unowned self] _ in
+                self.isFavorite.toggle()
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func setUpViews() {
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(favoriteButton)
 
         imageView.snp.makeConstraints { maker in
             maker.width.equalToSuperview()
             maker.height.equalTo(imageView.snp.width).multipliedBy(1.0)
+        }
+
+        favoriteButton.snp.makeConstraints { maker in
+            maker.height.width.equalTo(32)
+            maker.top.equalToSuperview().offset(8)
+            maker.right.equalToSuperview().offset(-8)
         }
 
         titleLabel.snp.makeConstraints { maker in
@@ -47,10 +99,6 @@ final class RecipeCell: UICollectionViewCell {
             maker.right.equalToSuperview().offset(-LayoutConst.titleMarginSide)
             maker.left.equalToSuperview().offset(LayoutConst.titleMarginSide)
         }
-    }
-
-    func set(title: String, thumbnailURL: URL, isFavorite: Bool) {
-        titleLabel.text = title
     }
 
     required init?(coder: NSCoder) {
