@@ -39,9 +39,3 @@ public final class RecipeModelImpl: RecipeModel {
         recipeListRelay.mutableValue[safe: index] ?? nil
     }
 }
-
-public extension Collection {
-    subscript (safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
-}

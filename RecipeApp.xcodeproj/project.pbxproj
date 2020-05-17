@@ -11,7 +11,7 @@
 		4B859446247022A400BFA073 /* RecipeAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A778F2469C23F0058E248 /* RecipeAppKit.framework */; };
 		4B85944A247049EF00BFA073 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B859449247049EF00BFA073 /* FavoriteModel.swift */; };
 		4B85944C2470608C00BFA073 /* Rx+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85944B2470608C00BFA073 /* Rx+extension.swift */; };
-		4B85944E247060BC00BFA073 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85944D247060BC00BFA073 /* Array+extension.swift */; };
+		4B85944E247060BC00BFA073 /* Collection+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85944D247060BC00BFA073 /* Collection+extension.swift */; };
 		4B859451247066E200BFA073 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B859450247066E200BFA073 /* RecipeModel.swift */; };
 		4B8594532471351800BFA073 /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8594522471351800BFA073 /* RecipeListViewModel.swift */; };
 		4B8594552471520600BFA073 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594542471520600BFA073 /* RxCocoa.framework */; };
@@ -116,7 +116,7 @@
 		4B859444247020FE00BFA073 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		4B859449247049EF00BFA073 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		4B85944B2470608C00BFA073 /* Rx+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extension.swift"; sourceTree = "<group>"; };
-		4B85944D247060BC00BFA073 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
+		4B85944D247060BC00BFA073 /* Collection+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+extension.swift"; sourceTree = "<group>"; };
 		4B859450247066E200BFA073 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		4B8594522471351800BFA073 /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		4B8594542471520600BFA073 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				4B85944B2470608C00BFA073 /* Rx+extension.swift */,
-				4B85944D247060BC00BFA073 /* Array+extension.swift */,
+				4B85944D247060BC00BFA073 /* Collection+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -622,7 +622,7 @@
 				5D3A77B92469D9670058E248 /* VideosSample.swift in Sources */,
 				5D3A77C72469EE430058E248 /* APIError.swift in Sources */,
 				4B85944C2470608C00BFA073 /* Rx+extension.swift in Sources */,
-				4B85944E247060BC00BFA073 /* Array+extension.swift in Sources */,
+				4B85944E247060BC00BFA073 /* Collection+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
