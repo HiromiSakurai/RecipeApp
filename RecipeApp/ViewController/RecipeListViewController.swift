@@ -33,6 +33,9 @@ final class RecipeListViewController: UIViewController {
 
             let favoriteButtonHandler = { [weak self] in
                 guard let self  = self else { return }
+                if !item.isFavorite {
+                    self.showSimpleAlert(with: "\(item.title) をお気に入りに追加！")
+                }
                 self.viewModel.toggleFavorite(at: indexPath)
             }
 
@@ -82,3 +85,7 @@ extension RecipeListViewController: Initializable {
         .init(viewModel: viewModel)
     }
 }
+
+// MARK: - AlertShowable
+
+extension RecipeListViewController: AlertShowable {}
