@@ -23,6 +23,8 @@
 		4B85945E247173E000BFA073 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85945D247173E000BFA073 /* Initializable.swift */; };
 		4B859460247175AF00BFA073 /* RecipeCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85945F247175AF00BFA073 /* RecipeCellViewData.swift */; };
 		4B8594622471762E00BFA073 /* SectionOfRecipeCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8594612471762E00BFA073 /* SectionOfRecipeCellViewData.swift */; };
+		4B8595002471859900BFA073 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594FF2471859900BFA073 /* Differentiator.framework */; };
+		4B8595012471859900BFA073 /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594FF2471859900BFA073 /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77682469B4380058E248 /* AppDelegate.swift */; };
 		5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A776A2469B4380058E248 /* SceneDelegate.swift */; };
 		5D3A77722469B4400058E248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A77712469B4400058E248 /* Assets.xcassets */; };
@@ -95,6 +97,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4B8595012471859900BFA073 /* Differentiator.framework in Embed Frameworks */,
 				4B8594592471520B00BFA073 /* RxRelay.framework in Embed Frameworks */,
 				4B8594562471520600BFA073 /* RxCocoa.framework in Embed Frameworks */,
 				4B85945C2471735800BFA073 /* RxDataSources.framework in Embed Frameworks */,
@@ -119,6 +122,7 @@
 		4B85945D247173E000BFA073 /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		4B85945F247175AF00BFA073 /* RecipeCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellViewData.swift; sourceTree = "<group>"; };
 		4B8594612471762E00BFA073 /* SectionOfRecipeCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfRecipeCellViewData.swift; sourceTree = "<group>"; };
+		4B8594FF2471859900BFA073 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		5D3A77652469B4380058E248 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A77682469B4380058E248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A776A2469B4380058E248 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				4B8594552471520600BFA073 /* RxCocoa.framework in Frameworks */,
 				5D3A77A42469C23F0058E248 /* RecipeAppKit.framework in Frameworks */,
 				4B859446247022A400BFA073 /* RecipeAppKit.framework in Frameworks */,
+				4B8595002471859900BFA073 /* Differentiator.framework in Frameworks */,
 				4B85945B2471735800BFA073 /* RxDataSources.framework in Frameworks */,
 				5D3A77C12469E7090058E248 /* RxSwift.framework in Frameworks */,
 				4B8594582471520B00BFA073 /* RxRelay.framework in Frameworks */,
@@ -292,6 +297,7 @@
 		5D3A77AF2469D4380058E248 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B8594FF2471859900BFA073 /* Differentiator.framework */,
 				4B85945A2471735800BFA073 /* RxDataSources.framework */,
 				4B8594572471520B00BFA073 /* RxRelay.framework */,
 				4B8594542471520600BFA073 /* RxCocoa.framework */,
