@@ -2,3 +2,4 @@ github "Alamofire/Alamofire" ~> 5.1
 github "ReactiveX/RxSwift" ~> 5.0
 github "SnapKit/SnapKit" ~> 5.0.0
 github "RxSwiftCommunity/RxDataSources" ~> 4.0
+github "kean/Nuke" ~> 9.0
