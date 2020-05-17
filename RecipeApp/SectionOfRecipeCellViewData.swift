@@ -13,6 +13,7 @@ struct SectionOfRecipeCellViewData {
     var header: String
     var items: [Item]
 }
+
 extension SectionOfRecipeCellViewData: SectionModelType {
     typealias Item = RecipeCellViewData
 
