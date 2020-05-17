@@ -11,14 +11,8 @@ import RxSwift
 import RxCocoa
 import RecipeAppKit
 
-struct RecipeCellViewData {
-    let title: String
-    let thumbnailURL: URL
-    var isFavorite: Bool
-}
-
 protocol RecipeListViewModel {
-    func getRecipeCellViewData() -> Driver<[RecipeCellViewData]>
+    func getRecipeCellViewData() -> Driver<[SectionOfRecipeCellViewData]>
     func toggleFavorite(at indexPath: IndexPath)
 }
 
@@ -26,7 +20,7 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
     private let recipeModel: RecipeModel
     private let favoriteModel: FavoriteModel
 
-    private let recipeCellViewDataRelay = BehaviorRelay<[RecipeCellViewData]>(value: [])
+    private let recipeCellViewDataRelay = BehaviorRelay<[SectionOfRecipeCellViewData]>(value: [])
     private let disposeBag = DisposeBag()
 
     init(recipeModel: RecipeModel, favoriteModel: FavoriteModel) {
@@ -48,17 +42,22 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
                 }
                 .compactMap { $0 }
             }
+            .map { [.init(header: "", items: $0)] }
             .asObservable()
             .bind(to: recipeCellViewDataRelay)
             .disposed(by: disposeBag)
     }
 
-    func getRecipeCellViewData() -> Driver<[RecipeCellViewData]> {
+    func getRecipeCellViewData() -> Driver<[SectionOfRecipeCellViewData]> {
         recipeCellViewDataRelay.asDriver()
     }
 
     func toggleFavorite(at indexPath: IndexPath) {
-        let newData = recipeCellViewDataRelay.mutableValue.enumerated()
+        guard let recipes = recipeCellViewDataRelay.mutableValue.first?.items else {
+            return
+        }
+
+        let newRecipes = recipes.enumerated()
             .map { (index, element) -> RecipeCellViewData in
                 if index == indexPath.item {
                     var target = element
@@ -69,7 +68,7 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
                 }
             }
 
-        recipeCellViewDataRelay.mutableValue = newData
+        recipeCellViewDataRelay.mutableValue = [.init(header: "", items: newRecipes)]
     }
 
     private func checkIsFavorite(recipe: Recipe) -> Bool {
