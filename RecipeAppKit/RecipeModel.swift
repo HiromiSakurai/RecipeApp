@@ -13,14 +13,14 @@ public protocol RecipeModel {
     func fetchRecipeList() -> Single<[Recipe]>
 }
 
-final class RecipeModelImpl: RecipeModel {
+public final class RecipeModelImpl: RecipeModel {
     private let client: Client
 
-    init() {
+    public init() {
         self.client = ClientImpl()
     }
 
-    func fetchRecipeList() -> Single<[Recipe]> {
+    public func fetchRecipeList() -> Single<[Recipe]> {
         client
             .request(API.getVideosSample())
             .map(\.data)
