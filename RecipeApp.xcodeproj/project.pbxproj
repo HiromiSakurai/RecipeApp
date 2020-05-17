@@ -25,6 +25,7 @@
 		4B8594622471762E00BFA073 /* SectionOfRecipeCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8594612471762E00BFA073 /* SectionOfRecipeCellViewData.swift */; };
 		4B8595002471859900BFA073 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594FF2471859900BFA073 /* Differentiator.framework */; };
 		4B8595012471859900BFA073 /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594FF2471859900BFA073 /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B85950A2471B38100BFA073 /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8595092471B38100BFA073 /* FavoriteListViewModel.swift */; };
 		4B85950C2471B42200BFA073 /* FavoriteCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85950B2471B42200BFA073 /* FavoriteCellViewData.swift */; };
 		4B85950E2471B48100BFA073 /* SectionOfFavoriteCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85950D2471B48100BFA073 /* SectionOfFavoriteCellViewData.swift */; };
 		5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77682469B4380058E248 /* AppDelegate.swift */; };
@@ -125,6 +126,7 @@
 		4B85945F247175AF00BFA073 /* RecipeCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellViewData.swift; sourceTree = "<group>"; };
 		4B8594612471762E00BFA073 /* SectionOfRecipeCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfRecipeCellViewData.swift; sourceTree = "<group>"; };
 		4B8594FF2471859900BFA073 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		4B8595092471B38100BFA073 /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
 		4B85950B2471B42200BFA073 /* FavoriteCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellViewData.swift; sourceTree = "<group>"; };
 		4B85950D2471B48100BFA073 /* SectionOfFavoriteCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfFavoriteCellViewData.swift; sourceTree = "<group>"; };
 		5D3A77652469B4380058E248 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				4B8594522471351800BFA073 /* RecipeListViewModel.swift */,
+				4B8595092471B38100BFA073 /* FavoriteListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */,
 				5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */,
 				4B85950C2471B42200BFA073 /* FavoriteCellViewData.swift in Sources */,
+				4B85950A2471B38100BFA073 /* FavoriteListViewModel.swift in Sources */,
 				5D3A77DA246F55320058E248 /* RecipeAppTabBarController.swift in Sources */,
 				4B85950E2471B48100BFA073 /* SectionOfFavoriteCellViewData.swift in Sources */,
 				5D3A77C9246B35CE0058E248 /* RecipeListViewController.swift in Sources */,
