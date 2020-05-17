@@ -11,6 +11,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import Nuke
 
 typealias FavoriteButtonHandler = (() -> Void)
 typealias FavoriteCell = RecipeCell
@@ -30,7 +31,6 @@ final class RecipeCell: UICollectionViewCell {
 
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage.init(named: "hot_dog")
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
@@ -73,6 +73,9 @@ final class RecipeCell: UICollectionViewCell {
 
         favoriteButton.isHidden = favoriteButtonHandler == nil
         self.favoriteButtonHandler = favoriteButtonHandler
+
+        let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
+        Nuke.loadImage(with: thumbnailURL, options: options, into: imageView)
     }
 
     private func setUpBindings() {
