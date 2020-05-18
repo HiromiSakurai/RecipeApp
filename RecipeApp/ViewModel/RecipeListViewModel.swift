@@ -12,7 +12,7 @@ import RxCocoa
 import RecipeAppKit
 
 protocol RecipeListViewModel {
-    func getRecipeCellViewData() -> Driver<[SectionOfRecipeCellViewData]>
+    func recipeCellViewDataStream() -> Driver<[SectionOfRecipeCellViewData]>
     func toggleFavorite(at indexPath: IndexPath)
 }
 
@@ -27,7 +27,7 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
         self.recipeModel = recipeModel
         self.favoriteModel = favoriteModel
 
-        recipeModel.getRecipeList()
+        recipeModel.recipeListStream()
             .map { recipes -> [RecipeCellViewData] in
                 return recipes.map { [weak self] recipe -> RecipeCellViewData? in
                     guard let self = self else {
@@ -48,7 +48,7 @@ final class RecipeListViewModelImpl: RecipeListViewModel {
             .disposed(by: disposeBag)
     }
 
-    func getRecipeCellViewData() -> Driver<[SectionOfRecipeCellViewData]> {
+    func recipeCellViewDataStream() -> Driver<[SectionOfRecipeCellViewData]> {
         recipeCellViewDataRelay.asDriver()
     }
 

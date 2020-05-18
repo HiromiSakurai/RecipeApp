@@ -12,8 +12,8 @@ import RxCocoa
 import RecipeAppKit
 
 protocol FavoriteListViewModel {
-    func getFavoriteCellViewData() -> Driver<[SectionOfFavoriteCellViewData]>
-    func getFavoriteCount() -> Driver<Int>
+    func favoriteCellViewDataStream() -> Driver<[SectionOfFavoriteCellViewData]>
+    func favoriteCountStream() -> Driver<Int>
 }
 
 final class FavoriteListViewModelImpl: FavoriteListViewModel {
@@ -26,7 +26,7 @@ final class FavoriteListViewModelImpl: FavoriteListViewModel {
     init(favoriteModel: FavoriteModel) {
         self.favoriteModel = favoriteModel
 
-        let favoriteList = self.favoriteModel.getFavoriteList()
+        let favoriteList = self.favoriteModel.favoriteListStream()
 
         favoriteList
             .map { recipes -> [FavoriteCellViewData] in
@@ -47,11 +47,11 @@ final class FavoriteListViewModelImpl: FavoriteListViewModel {
             .disposed(by: disposeBag)
     }
 
-    func getFavoriteCellViewData() -> Driver<[SectionOfFavoriteCellViewData]> {
+    func favoriteCellViewDataStream() -> Driver<[SectionOfFavoriteCellViewData]> {
         favoriteCellViewDataRelay.asDriver()
     }
 
-    func getFavoriteCount() -> Driver<Int> {
+    func favoriteCountStream() -> Driver<Int> {
         favoriteCountRelay
             .asDriver()
             .compactMap { $0 }

@@ -11,7 +11,7 @@ import RxSwift
 import RxRelay
 
 public protocol FavoriteModel {
-    func getFavoriteList() -> Observable<[Recipe]>
+    func favoriteListStream() -> Observable<[Recipe]>
     func addFavorite(recipe: Recipe)
     func deleteFavorite(recipe: Recipe)
     func isFavorite(recipe: Recipe) -> Bool
@@ -30,7 +30,7 @@ public final class FavoriteModelImpl: FavoriteModel {
         self.favoriteListRelay = .init(value: favoriteList)
     }
 
-    public func getFavoriteList() -> Observable<[Recipe]> {
+    public func favoriteListStream() -> Observable<[Recipe]> {
         favoriteListRelay.asObservable()
     }
 

@@ -11,7 +11,7 @@ import RxSwift
 import RxRelay
 
 public protocol RecipeModel {
-    func getRecipeList() -> Observable<[Recipe]>
+    func recipeListStream() -> Observable<[Recipe]>
     func retrieveRecipe(using index: Int) -> Recipe?
 }
 
@@ -31,7 +31,7 @@ public final class RecipeModelImpl: RecipeModel {
             .disposed(by: disposeBag)
     }
 
-    public func getRecipeList() -> Observable<[Recipe]> {
+    public func recipeListStream() -> Observable<[Recipe]> {
         recipeListRelay.asObservable()
     }
 
