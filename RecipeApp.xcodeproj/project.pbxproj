@@ -309,6 +309,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4B8595162472675400BFA073 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				4B859444247020FE00BFA073 /* Disk.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
 		5D3A775C2469B4380058E248 = {
 			isa = PBXGroup;
 			children = (
@@ -363,13 +371,13 @@
 		5D3A77902469C23F0058E248 /* RecipeAppKit */ = {
 			isa = PBXGroup;
 			children = (
+				4B8595162472675400BFA073 /* LocalStorage */,
 				4B8595152472671E00BFA073 /* Model */,
 				4B859514247266BC00BFA073 /* API */,
 				4B85944F247060E700BFA073 /* Extension */,
 				5D3A77BC2469D9AC0058E248 /* Entity */,
 				5D3A77912469C23F0058E248 /* RecipeAppKit.h */,
 				5D3A77922469C23F0058E248 /* Info.plist */,
-				4B859444247020FE00BFA073 /* Disk.swift */,
 			);
 			path = RecipeAppKit;
 			sourceTree = "<group>";
