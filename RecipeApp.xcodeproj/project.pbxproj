@@ -32,11 +32,12 @@
 		4B8595122471EBD300BFA073 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8595112471EBD300BFA073 /* Nuke.framework */; };
 		4B8595132471EBD300BFA073 /* Nuke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8595112471EBD300BFA073 /* Nuke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B8595182472771A00BFA073 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8595172472771A00BFA073 /* Mocks.swift */; };
+		4B85951B2472A2F800BFA073 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A77B02469D4390058E248 /* RxSwift.framework */; };
 		5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77682469B4380058E248 /* AppDelegate.swift */; };
 		5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A776A2469B4380058E248 /* SceneDelegate.swift */; };
 		5D3A77722469B4400058E248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A77712469B4400058E248 /* Assets.xcassets */; };
 		5D3A77752469B4400058E248 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A77732469B4400058E248 /* LaunchScreen.storyboard */; };
-		5D3A77802469B4400058E248 /* RecipeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A777F2469B4400058E248 /* RecipeAppTests.swift */; };
+		5D3A77802469B4400058E248 /* RecipeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A777F2469B4400058E248 /* RecipeListViewModelTests.swift */; };
 		5D3A77982469C23F0058E248 /* RecipeAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A778F2469C23F0058E248 /* RecipeAppKit.framework */; };
 		5D3A779F2469C23F0058E248 /* RecipeAppKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A779E2469C23F0058E248 /* RecipeAppKitTests.swift */; };
 		5D3A77A12469C23F0058E248 /* RecipeAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D3A77912469C23F0058E248 /* RecipeAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,6 +138,7 @@
 		4B85950F2471E88800BFA073 /* AlertShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
 		4B8595112471EBD300BFA073 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		4B8595172472771A00BFA073 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		4B8595192472A28400BFA073 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = Carthage/Checkouts/RxSwift/RxSwift; sourceTree = "<group>"; };
 		5D3A77652469B4380058E248 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A77682469B4380058E248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A776A2469B4380058E248 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 		5D3A77742469B4400058E248 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D3A77762469B4400058E248 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D3A777B2469B4400058E248 /* RecipeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D3A777F2469B4400058E248 /* RecipeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAppTests.swift; sourceTree = "<group>"; };
+		5D3A777F2469B4400058E248 /* RecipeListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModelTests.swift; sourceTree = "<group>"; };
 		5D3A77812469B4400058E248 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D3A778F2469C23F0058E248 /* RecipeAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A77912469C23F0058E248 /* RecipeAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeAppKit.h; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B85951B2472A2F800BFA073 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +368,7 @@
 		5D3A777E2469B4400058E248 /* RecipeAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D3A777F2469B4400058E248 /* RecipeAppTests.swift */,
+				5D3A777F2469B4400058E248 /* RecipeListViewModelTests.swift */,
 				5D3A77812469B4400058E248 /* Info.plist */,
 			);
 			path = RecipeAppTests;
@@ -397,6 +400,7 @@
 		5D3A77AF2469D4380058E248 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B8595192472A28400BFA073 /* RxSwift */,
 				4B8595112471EBD300BFA073 /* Nuke.framework */,
 				4B8594FF2471859900BFA073 /* Differentiator.framework */,
 				4B85945A2471735800BFA073 /* RxDataSources.framework */,
@@ -641,7 +645,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3A77802469B4400058E248 /* RecipeAppTests.swift in Sources */,
+				5D3A77802469B4400058E248 /* RecipeListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +880,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipeAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -898,6 +906,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipeAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
