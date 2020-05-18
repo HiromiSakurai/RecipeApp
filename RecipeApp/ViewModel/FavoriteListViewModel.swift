@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RecipeAppKit
 
+/// @mockable
 protocol FavoriteListViewModel {
     func favoriteCellViewDataStream() -> Driver<[SectionOfFavoriteCellViewData]>
     func favoriteCountStream() -> Driver<Int>

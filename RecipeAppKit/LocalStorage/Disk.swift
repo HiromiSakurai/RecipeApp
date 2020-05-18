@@ -12,7 +12,13 @@ enum FileName: String {
     case favoriteList = "favorite_list.json"
 }
 
-final class Disk {
+/// @mockable
+protocol Disk {
+    func getObject<T: Decodable>(filename: FileName) -> T?
+    func writeObject<T: Encodable>(filename: FileName, jsonEncodable: T)
+}
+
+final class DiskImpl: Disk {
     private enum PathSearchError: Error {
         case pathNotFound
     }
@@ -21,7 +27,7 @@ final class Disk {
         case disk
     }
 
-    static let shared: Disk = Disk()
+    static let shared: Disk = DiskImpl()
     private let dispatchQueue: DispatchQueue = DispatchQueue(label: DispatchQueueLabel.disk.rawValue)
 
     private init() {}

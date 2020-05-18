@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RecipeAppKit
 
+/// @mockable
 protocol RecipeListViewModel {
     func recipeCellViewDataStream() -> Driver<[SectionOfRecipeCellViewData]>
     func toggleFavorite(at indexPath: IndexPath)

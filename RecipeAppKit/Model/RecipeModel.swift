@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxRelay
 
+/// @mockable
 public protocol RecipeModel {
     func recipeListStream() -> Observable<[Recipe]>
     func retrieveRecipe(using index: Int) -> Recipe?

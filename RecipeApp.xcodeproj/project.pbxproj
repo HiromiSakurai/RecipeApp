@@ -31,6 +31,7 @@
 		4B8595102471E88800BFA073 /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85950F2471E88800BFA073 /* AlertShowable.swift */; };
 		4B8595122471EBD300BFA073 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8595112471EBD300BFA073 /* Nuke.framework */; };
 		4B8595132471EBD300BFA073 /* Nuke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8595112471EBD300BFA073 /* Nuke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B8595182472771A00BFA073 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8595172472771A00BFA073 /* Mocks.swift */; };
 		5D3A77692469B4380058E248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A77682469B4380058E248 /* AppDelegate.swift */; };
 		5D3A776B2469B4380058E248 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A776A2469B4380058E248 /* SceneDelegate.swift */; };
 		5D3A77722469B4400058E248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A77712469B4400058E248 /* Assets.xcassets */; };
@@ -135,6 +136,7 @@
 		4B85950D2471B48100BFA073 /* SectionOfFavoriteCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfFavoriteCellViewData.swift; sourceTree = "<group>"; };
 		4B85950F2471E88800BFA073 /* AlertShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
 		4B8595112471EBD300BFA073 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		4B8595172472771A00BFA073 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		5D3A77652469B4380058E248 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A77682469B4380058E248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A776A2469B4380058E248 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				5D3A77712469B4400058E248 /* Assets.xcassets */,
 				5D3A77732469B4400058E248 /* LaunchScreen.storyboard */,
 				5D3A77762469B4400058E248 /* Info.plist */,
+				4B8595172472771A00BFA073 /* Mocks.swift */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				4B85950E2471B48100BFA073 /* SectionOfFavoriteCellViewData.swift in Sources */,
 				5D3A77C9246B35CE0058E248 /* RecipeListViewController.swift in Sources */,
 				5D3A77D4246F10000058E248 /* NSAttributedString+extension.swift in Sources */,
+				4B8595182472771A00BFA073 /* Mocks.swift in Sources */,
 				5D3A77D8246F44090058E248 /* FavoriteListViewController.swift in Sources */,
 				5D3A77D0246F0CD90058E248 /* RecipeCell.swift in Sources */,
 				5D3A77D6246F106A0058E248 /* RecipeListFlowLayout.swift in Sources */,
