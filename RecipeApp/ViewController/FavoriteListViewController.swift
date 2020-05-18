@@ -90,11 +90,3 @@ final class FavoriteListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-// MARK: - Initializable
-
-extension FavoriteListViewController: Initializable {
-    static func initialize(viewModel: FavoriteListViewModel) -> FavoriteListViewController {
-        .init(viewModel: viewModel)
-    }
-}

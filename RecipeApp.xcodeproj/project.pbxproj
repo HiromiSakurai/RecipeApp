@@ -20,7 +20,6 @@
 		4B8594592471520B00BFA073 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594572471520B00BFA073 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B85945B2471735800BFA073 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B85945A2471735800BFA073 /* RxDataSources.framework */; };
 		4B85945C2471735800BFA073 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B85945A2471735800BFA073 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4B85945E247173E000BFA073 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85945D247173E000BFA073 /* Initializable.swift */; };
 		4B859460247175AF00BFA073 /* RecipeCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85945F247175AF00BFA073 /* RecipeCellViewData.swift */; };
 		4B8594622471762E00BFA073 /* SectionOfRecipeCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8594612471762E00BFA073 /* SectionOfRecipeCellViewData.swift */; };
 		4B8595002471859900BFA073 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8594FF2471859900BFA073 /* Differentiator.framework */; };
@@ -129,7 +128,6 @@
 		4B8594542471520600BFA073 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		4B8594572471520B00BFA073 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		4B85945A2471735800BFA073 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
-		4B85945D247173E000BFA073 /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		4B85945F247175AF00BFA073 /* RecipeCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellViewData.swift; sourceTree = "<group>"; };
 		4B8594612471762E00BFA073 /* SectionOfRecipeCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfRecipeCellViewData.swift; sourceTree = "<group>"; };
 		4B8594FF2471859900BFA073 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				5D3A77D1246F0F1F0058E248 /* RecipeCellHeightCalculatable.swift */,
-				4B85945D247173E000BFA073 /* Initializable.swift */,
 				4B85950F2471E88800BFA073 /* AlertShowable.swift */,
 			);
 			path = Protocol;
@@ -640,7 +637,6 @@
 				4B8594532471351800BFA073 /* RecipeListViewModel.swift in Sources */,
 				4B8594622471762E00BFA073 /* SectionOfRecipeCellViewData.swift in Sources */,
 				5D3A77D2246F0F200058E248 /* RecipeCellHeightCalculatable.swift in Sources */,
-				4B85945E247173E000BFA073 /* Initializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

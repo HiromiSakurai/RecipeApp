@@ -21,10 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let favoriteModel = FavoriteModelImpl()
 
         let recipeListVM = RecipeListViewModelImpl(recipeModel: RecipeModelImpl(), favoriteModel: favoriteModel)
-        let recipeListVC = RecipeListViewController.initialize(viewModel: recipeListVM)
+        let recipeListVC = RecipeListViewController(viewModel: recipeListVM)
 
         let favoriteListVM = FavoriteListViewModelImpl(favoriteModel: favoriteModel)
-        let favoriteListVC = FavoriteListViewController.initialize(viewModel: favoriteListVM)
+        let favoriteListVC = FavoriteListViewController(viewModel: favoriteListVM)
 
         let tabBarController = RecipeAppTabBarController(recipeListVC: recipeListVC, favoriteListVC: favoriteListVC)
 

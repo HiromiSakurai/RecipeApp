@@ -78,14 +78,6 @@ final class RecipeListViewController: UIViewController {
     }
 }
 
-// MARK: - Initializable
-
-extension RecipeListViewController: Initializable {
-    static func initialize(viewModel: RecipeListViewModel) -> RecipeListViewController {
-        .init(viewModel: viewModel)
-    }
-}
-
 // MARK: - AlertShowable
 
 extension RecipeListViewController: AlertShowable {}
