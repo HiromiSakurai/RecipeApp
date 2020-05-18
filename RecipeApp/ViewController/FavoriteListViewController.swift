@@ -59,11 +59,11 @@ final class FavoriteListViewController: UIViewController {
     }
 
     private func setUpBindings() {
-        viewModel.getFavoriteCellViewData()
+        viewModel.favoriteCellViewDataStream()
             .drive(favoriteListCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        viewModel.getFavoriteCount()
+        viewModel.favoriteCountStream()
             .drive(onNext: { [weak self] count in
                 self?.favoriteCountLabel.text = "お気に入り件数: \(count)"
             })

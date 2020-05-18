@@ -10,8 +10,9 @@ import Foundation
 import RxSwift
 import RxRelay
 
+/// @mockable
 public protocol FavoriteModel {
-    func getFavoriteList() -> Observable<[Recipe]>
+    func favoriteListStream() -> Observable<[Recipe]>
     func addFavorite(recipe: Recipe)
     func deleteFavorite(recipe: Recipe)
     func isFavorite(recipe: Recipe) -> Bool
@@ -23,14 +24,14 @@ public final class FavoriteModelImpl: FavoriteModel {
     private var memoryCache: Set<Recipe>
 
     public init() {
-        self.disk = Disk.shared
+        self.disk = DiskImpl.shared
 
         let favoriteList: [Recipe] = disk.getObject(filename: .favoriteList) ?? []
         self.memoryCache = Set(favoriteList)
         self.favoriteListRelay = .init(value: favoriteList)
     }
 
-    public func getFavoriteList() -> Observable<[Recipe]> {
+    public func favoriteListStream() -> Observable<[Recipe]> {
         favoriteListRelay.asObservable()
     }
 

@@ -68,7 +68,7 @@ final class RecipeListViewController: UIViewController {
     }
 
     private func setUpBindings() {
-        viewModel.getRecipeCellViewData()
+        viewModel.recipeCellViewDataStream()
             .drive(recipeListCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }

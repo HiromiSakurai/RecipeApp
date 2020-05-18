@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
+/// @mockable
 protocol Client {
     func request<Response>(_ endpoint: Endpoint<Response>) -> Single<Response>
 }
